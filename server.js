@@ -37,8 +37,8 @@ app.put('/image', (req, res) => { image.handleImage(req, res, db) });
 
 app.post('/imageurl', (req, res) => { image.handleAPI(req, res) });
 
-app.listen(3000, () => {
-	console.log('app runs');
+app.listen(process.env.PORT || 3000, () => {
+	console.log(`app runs on port ${process.env.PORT}`);
 })
 
 // /signin --> POST = success/fail (POST instead of query string!)
